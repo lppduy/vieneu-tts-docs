@@ -1,41 +1,31 @@
-# Website
+# VieNeu-TTS Documentation
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Documentation site for [VieNeu-TTS](https://github.com/pnnbao97/VieNeu-TTS) — Vietnamese Text-to-Speech with Instant Voice Cloning.
 
-## Installation
+**Live site:** https://lppduy.github.io/vieneu-tts-docs/
 
-```bash
-yarn
-```
+## Links
+
+- **VieNeu-TTS repo:** https://github.com/pnnbao97/VieNeu-TTS
+- **0.5B Model:** https://huggingface.co/pnnbao-ump/VieNeu-TTS
+- **0.3B Model:** https://huggingface.co/pnnbao-ump/VieNeu-TTS-0.3B
+- **Dataset:** https://huggingface.co/datasets/pnnbao-ump/VieNeu-TTS-1000h
+- **Discord:** https://discord.gg/yJt8kzjzWZ
 
 ## Local Development
 
 ```bash
-yarn start
+npm install
+npm start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+Opens at http://localhost:3000. Edits to markdown files hot-reload instantly.
 
 ## Build
 
 ```bash
-yarn build
+npm run build
+npm run serve   # preview production build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-## Deployment
-
-Using SSH:
-
-```bash
-USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+Built with [Docusaurus](https://docusaurus.io/).
