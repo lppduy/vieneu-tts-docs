@@ -1,30 +1,197 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * VieNeu-TTS Docs — Modern theme
  */
 
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #6c5ce7;
+  --ifm-color-primary-dark: #5a48e0;
+  --ifm-color-primary-darker: #5040dc;
+  --ifm-color-primary-darkest: #3a2bc5;
+  --ifm-color-primary-light: #7e70ee;
+  --ifm-color-primary-lighter: #8a7ef0;
+  --ifm-color-primary-lightest: #a99df5;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, sans-serif;
+  --ifm-heading-font-weight: 700;
+  --ifm-font-weight-bold: 600;
+  --docusaurus-highlighted-code-line-bg: rgba(108, 92, 231, 0.1);
+  --ifm-border-radius: 8px;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #a29bfe;
+  --ifm-color-primary-dark: #8b82fe;
+  --ifm-color-primary-darker: #7d73fd;
+  --ifm-color-primary-darkest: #4f42fd;
+  --ifm-color-primary-light: #b9b4fe;
+  --ifm-color-primary-lighter: #c7c3fe;
+  --ifm-color-primary-lightest: #eeedff;
+  --docusaurus-highlighted-code-line-bg: rgba(162, 155, 254, 0.15);
+  --ifm-background-color: #0f0f1a;
+  --ifm-background-surface-color: #1a1a2e;
+}
+
+/* Hero section */
+.hero--primary {
+  background: linear-gradient(135deg, #0f0f1a 0%, #1a1a3e 30%, #6c5ce7 100%);
+  color: #fff;
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero--primary::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(108, 92, 231, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero--primary::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(162, 155, 254, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero__title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 1;
+}
+
+.hero__subtitle {
+  font-size: 1.4rem;
+  opacity: 0.9;
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* CTA button */
+.hero--primary .button--secondary {
+  background: #fff;
+  color: #1a1a2e;
+  border: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.8rem 2rem;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.hero--primary .button--secondary:hover {
+  background: #f0f0ff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(108, 92, 231, 0.3);
+  color: #1a1a2e;
+}
+
+/* Feature cards */
+.feature-card {
+  background: var(--ifm-background-surface-color, #f8f9fa);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  height: 100%;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(108, 92, 231, 0.12);
+  border-color: var(--ifm-color-primary-lighter);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Features section */
+.features-section {
+  padding: 4rem 0;
+}
+
+/* Navbar refinement */
+.navbar {
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='dark'] .navbar {
+  background: rgba(15, 15, 26, 0.85);
+}
+
+/* Code blocks */
+.prism-code {
+  border-radius: 12px !important;
+}
+
+/* Sidebar */
+.menu__link {
+  border-radius: 8px;
+  transition: all 0.15s ease;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Footer */
+.footer--dark {
+  background: #0f0f1a;
+}
+
+/* Badge for code-switching feature */
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge--primary {
+  background: var(--ifm-color-primary);
+  color: #fff;
+}
+
+/* Table styling */
+table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th {
+  background: var(--ifm-color-emphasis-100);
 }
